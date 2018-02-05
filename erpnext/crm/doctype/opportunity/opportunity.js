@@ -45,8 +45,8 @@ frappe.ui.form.on("Opportunity", {
 					}, __("Make"));
 			}
 
-			frm.add_custom_button(__('Quotation'),
-				cur_frm.cscript.create_quotation, __("Make"));
+			// frm.add_custom_button(__('Quotation'),
+			// 	cur_frm.cscript.create_quotation, __("Make"));
 
 			if(doc.status!=="Quotation") {
 				frm.add_custom_button(__('Lost'),
@@ -82,7 +82,20 @@ frappe.ui.form.on("Opportunity", {
 			method: "erpnext.crm.doctype.opportunity.opportunity.make_supplier_quotation",
 			frm: cur_frm
 		})
-	}
+	},
+
+	// after_save: function(frm){
+	// if(frm.doc.status==="Converted") {
+	// 	 frappe.call({
+	// 		method: "erpnext.crm.doctype.opportunity.opportunity_dashboard.get_data",
+	// 		callback: function(r, rt) {
+	// 			if(r.message) {
+	// 				 frappe.msgprint(__("Done!")); 		
+	// 				}
+	// 			}
+	// 	})
+	// 		}	
+	// }
 })
 
 // TODO commonify this code

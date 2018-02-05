@@ -12,10 +12,6 @@ def get_data():
 				},
 				{
 					"type": "doctype",
-					"name": "discuss"
-				},
-				{
-					"type": "doctype",
 					"name": "Guardian"
 				},
 				{
